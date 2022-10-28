@@ -1,6 +1,6 @@
 import './Home.css'
 import {useEffect, useState} from 'react'
-import {APIKey} from '../../config/key'
+import {APIKey} from '../../../config/key'
 
 function Home () {
 
