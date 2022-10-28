@@ -1,23 +1,16 @@
 import './Home.css'
+import {useEffect, useState} from 'react'
+import {APIKey} from '../../config/key'
 
 function Home () {
 
-    const movies = [
+    const [movies, setMovies] = useState([])
 
-        {   id: 1,
-            title: 'Spider Man',
-            image_url: "https://upload.wikimedia.org/wikipedia/pt/thumb/c/c7/Maze_runner.jpg/250px-Maze_runner.jpg"
-        },
-        {   id: 2,
-            title: 'Maze Runner',
-            image_url: "https://upload.wikimedia.org/wikipedia/pt/thumb/c/c7/Maze_runner.jpg/250px-Maze_runner.jpg"
-        },
-        {   id: 3,
-            title: 'Iron man',
-            image_url: "https://upload.wikimedia.org/wikipedia/pt/thumb/c/c7/Maze_runner.jpg/250px-Maze_runner.jpg"
-        }
+    useEffect(() => {
+        // consumir a api...
 
-    ]
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`)
+    }, [])
 
     return (
         <div>
